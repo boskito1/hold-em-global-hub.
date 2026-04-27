@@ -1,15 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    
-    
-    <script Pi.init({ version: "2.0" , sandbox: true >
-</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hold'em Global Hub - Pi Network Poker</title>
+    <script src="https://sdk.minepi.com/pi-sdk.js"></script>
+</head>
 <body style="text-align: center; font-family: sans-serif; background-color: #f4f4f4;">
     <h1>Hold'em Global Hub</h1>
     <p>Aplicația ta de poker pe Pi Network.</p>
-    <button style="padding: 10px 20px; background-color: #6200ee; color: white; border: none; border-radius: 5px;">
+    <button onclick="connectWallet()" style="padding: 10px 20px; background-color: #6200ee; color: white; border: none; border-radius: 5px; cursor: pointer;">
         Conectează Portofelul Pi
     </button>
+    
+    <script>
+        function connectWallet() {
+            if (typeof Pi !== 'undefined') {
+                Pi.init({ version: "2.0", sandbox: true });
+                // Add wallet connection logic here
+            } else {
+                alert('Pi SDK is not loaded');
+            }
+        }
+    </script>
 </body>
 </html>
